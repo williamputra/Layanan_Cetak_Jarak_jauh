@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 8, 2018 12:31:28 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojos.DaftarRegistSignin" table="DaftarRegistSignin" catalog="db165314061" optimistic-lock="version">
+        <id name="noIdentitas" type="int">
+            <column name="NoIdentitas" />
+            <generator class="assigned" />
+        </id>
+        <property name="nama" type="string">
+            <column name="Nama" length="100" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="Alamat" length="100" not-null="true" />
+        </property>
+        <property name="deposit" type="string">
+            <column name="Deposit" length="100" not-null="true" />
+        </property>
+        <property name="sandi" type="string">
+            <column name="Sandi" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

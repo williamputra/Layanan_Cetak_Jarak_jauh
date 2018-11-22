@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 8, 2018 12:31:28 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojos.FileData" table="FileData" catalog="db165314061" optimistic-lock="version">
+        <id name="jumlahCetakan" type="int">
+            <column name="JumlahCetakan" />
+            <generator class="assigned" />
+        </id>
+        <property name="waktu" type="date">
+            <column name="Waktu" length="10" not-null="true" />
+        </property>
+        <property name="fileCetakan" type="string">
+            <column name="FileCetakan" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
