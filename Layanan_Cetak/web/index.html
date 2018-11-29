@@ -1,320 +1,528 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <!-- Theme Made By www.w3schools.com - No Copyright -->
+        <title>PT. Percetakan Abadi</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
             body {
-                height: 3000px;
-                background: linear-gradient(141deg, #80e5ff 0%, #b3f0ff 51%, #e6faff 75%);
+                font: 400 15px Lato, sans-serif;
+                line-height: 1.8;
+                color: #303030;
             }
-
-            body01
-            {font-family: Arial, Helvetica, sans-serif;}
-            * {box-sizing: border-box;}
-
-
-            .bg-img {
-                /* The image used */
+            h2 {
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #303030;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+            h4 {
+                font-size: 19px;
+                line-height: 1.375em;
+                color: #303030;
+                font-weight: 400;
+                margin-bottom: 30px;
+            }  
+            .jumbotron {
+                background-color: #f6f6f6;
                 background-image: url("contoh.jpg");
-
-                min-height: 1000px;
-
-                /* Center and scale the image nicely */
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-
-                /* Needed to position the navbar */
-                position: relative;
+                color: #fff;
+                padding: 250px 25px;
+                font-family: Montserrat, sans-serif;
+                font: status-bar;
             }
-
-            /* Position the navbar container inside the image */
-            .container01 {
-                position: absolute;
-                margin: 20px;
-                width: auto;
-            }
-
-            /* The navbar */
-            .topnav {
-                overflow: hidden;
-                background-color: #ffffff;
-            }
-
-            /* Navbar links */
-            .topnav a {
-                float: left;
-                color: #000000;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-
-            .topnav a:hover {
-                background-color: #ddd;
-                color: black;
+            .container-fluid {
+                padding: 60px 50px;             
             }
             .bg-grey {
                 background-color: #f6f6f6;
-            } 
-            * {
-                box-sizing: border-box;
+            }         
+            .thumbnail {
+                padding: 0 0 15px 0;
+                border: none;
+                border-radius: 0;
             }
-
-            body {
-                font-family: Arial;
-                font-size: 17px;
-            }
-
-            .container {
-                max-width: 1000px;
-            }
-            .container img {vertical-align: middle;}
-
-            .container .content {
-                position: absolute;
-                bottom: 0;
-                background: rgb(0, 0, 0); /* Fallback color */
-                background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-                color: #f1f1f1;
+            .thumbnail img {
                 width: 100%;
-                padding: 20px;
+                height: 100%;
+                margin-bottom: 10px;
             }
-            * {
-                box-sizing: border-box;
+            .carousel-control.right, .carousel-control.left {
+                background-image: none;
+                color: #f4511e;
             }
-
-            .column {
-                float: left;
-                width: 33.33%;
-                padding: 5px;
+            .carousel-indicators li {
+                border-color: #f4511e;
             }
-
-            /* Clearfix (clear floats) */
-            .row::after {
-                content: "";
-                clear: both;
-                display: table;
+            .carousel-indicators li.active {
+                background-color: #f4511e;
             }
-            html {
-                box-sizing: border-box;
+            .item h4 {
+                font-size: 19px;
+                line-height: 1.375em;
+                font-weight: 400;
+                font-style: italic;
+                margin: 70px 0;
             }
-
-            *, *:before, *:after {
-                box-sizing: inherit;
+            .item span {
+                font-style: normal;
             }
-
-            .column01 {
-                float: left;
-                width: 33.3%;
-                margin-bottom: 16px;
-                padding: 0 8px;
+            .panel {
+                border: 1px solid #f4511e; 
+                border-radius:0 !important;
+                transition: box-shadow 0.5s;
             }
-
-            @media screen and (max-width: 650px) {
-                .column01 {
-                    width: 100%;
-                    display: block;
+            .panel:hover {
+                box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+            }
+            .panel-footer .btn:hover {
+                border: 1px solid #f4511e;
+                background-color: #fff !important;
+                color: #f4511e;
+            }
+            .panel-heading {
+                color: #fff !important;
+                background-color: #f4511e !important;
+                padding: 25px;
+                border-bottom: 1px solid transparent;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            .panel-footer {
+                background-color: white !important;
+            }
+            .panel-footer h3 {
+                font-size: 32px;
+            }
+            .panel-footer h4 {
+                color: #aaa;
+                font-size: 14px;
+            }
+            .panel-footer .btn {
+                margin: 15px 0;
+                background-color: #f4511e;
+                color: #fff;
+            }
+            .navbar {
+                margin-bottom: 0;
+                background-color: #4CAF50;
+                z-index: 9999;
+                border: 0;
+                font-size: 12px !important;
+                line-height: 1.42857143 !important;
+                letter-spacing: 4px;
+                border-radius: 0;
+                font-family: Montserrat, sans-serif;
+            }
+            .navbar li a, .navbar .navbar-brand {
+                color: #fff !important;
+            }
+            .navbar-nav li a:hover, .navbar-nav li.active a {
+                color: #f4511e !important;
+                background-color: #fff !important;
+            }
+            .navbar-default .navbar-toggle {
+                border-color: transparent;
+                color: #fff !important;
+            }
+            footer .glyphicon {
+                font-size: 20px;
+                margin-bottom: 20px;
+                color: #f4511e;
+            }
+            .slideanim {visibility:hidden;}
+            .slide {
+                animation-name: slide;
+                -webkit-animation-name: slide;
+                animation-duration: 1s;
+                -webkit-animation-duration: 1s;
+                visibility: visible;
+            }
+            @keyframes slide {
+                0% {
+                    opacity: 0;
+                    transform: translateY(70%);
+                } 
+                100% {
+                    opacity: 1;
+                    transform: translateY(0%);
                 }
             }
-
-            .card {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            @-webkit-keyframes slide {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateY(70%);
+                } 
+                100% {
+                    opacity: 1;
+                    -webkit-transform: translateY(0%);
+                }
             }
-
-            .container02 {
-                padding: 0 16px;
+            @media screen and (max-width: 768px) {
+                .col-sm-4 {
+                    text-align: center;
+                    margin: 25px 0;
+                }
+                .btn-lg {
+                    width: 100%;
+                    margin-bottom: 35px;
+                }
             }
+            @media screen and (max-width: 480px) {
+                .logo {
+                    font-size: 150px;
+                }
+            }           
 
-            .container02::after, .row01::after {
-                content: "";
-                clear: both;
-                display: table;
-            }
-
-            .title {
-                color: grey;
-            }
-
-            .button {
+            /* Full-width input fields */
+            input[type=text], input[type=password], input[type=date], input[type=time] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
                 border: none;
-                outline: 0;
-                display: inline-block;
-                padding: 8px;
+                background: #f1f1f1;
+            }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+
+            /* Set a style for the submit button */
+            .btn {
+                background-color: #4CAF50;
                 color: white;
-                background-color: green;
-                text-align: center;
+                padding: 16px 20px;
+                border: none;
                 cursor: pointer;
                 width: 100%;
+                opacity: 0.9;
             }
 
-            .button:hover {
-                background-color: #555;
-            }
-            .container03 {
-                position: relative;
-                width: 100%;
-            }
-
-            .image {
-                display: block;
-                width: 100%;
-                height: auto;
-            }
-
-            .overlay {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                width: 100%;
-                opacity: 0;
-                transition: .5s ease;
-                background-color: cadetblue;
-            }
-
-            .container03:hover .overlay {
+            .btn:hover {
                 opacity: 1;
+            }                                    
+            .cancelbtn {
+                padding: 14px 20px;
+                background-color: #f44336;
             }
 
-            .text {
+            /* Float cancel and signup buttons and add an equal width */
+            .cancelbtn, .signupbtn {
+                float: left;
+                width: 50%;
+            }
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+                .cancelbtn, .signupbtn {
+                    width: 100%;
+                }
+            }
+            button {
+                background-color: #4CAF50;
                 color: white;
-                font-size: 20px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                text-align: center;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                opacity: 0.9;
             }
-
         </style>
     </head>
-    <body>
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-        <div class="bg-img">
-            <div class="container01">
-                <div class="topnav">
-                    <a href="index.html"><b>HOME</b></a>
-                    <a href="login.html"><b>LOGIN</b></a>
-                    <a href="layanan.html"><b>LAYANAN</b></a>
-                    <a href="kontak.html"><b>KONTAK</b></a>
-                </div>
-            </div>           
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
-                <div class="content">
-                    <h1>PT. Percetakan Abadi</h1>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#myPage"><b>Beranda</b></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#tentang"><b>TENTANG</b></a></li>
+                        <li><a href="#daftar"><b>DAFTAR</b></a></li>
+                        <li><a href="#login"><b>LOGIN</b></a></li>
+                        <li><a href="#deposit"><b>DEPOSIT</b></a></li>
+                        <li><a href="#layanan"><b>LAYANAN</b></a></li>
+                        <li><a href="#contact"><b>CONTACT</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron text-center">
+            <h1>PT. Percetakan Percetakan Abadi</h1> 
+            <p>Spesialis Percetakan Online</p> 
+        </div>
+        <!-- Container (About Section) -->
+        <div id="tentang" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Tentang Perusahaan</h2><br>
                     <p> <b>PT. Percetakan Abadi merupakan salah satu perusahaan yang bergerak dibidang
-                            percetakan dokumen, Namun perusahaan ini berbeda dengan perusahaan lain karena
+                            percetakan dokumen, namun perusahaan ini berbeda dengan perusahaan lain karena
                             perusahaan ini menyediakan layanan untuk cetak jarak jauh, yang mana pelanggan
                             dapat melakukan cetak dokumen secara online dengan cara mengirimkan file dokumen
                             ke web kami dan kami akan mencetaknya secara cepat dan seseui dengan prosedur.
-                            Perusahaan kami dilengkapi dengan berbagai macam fasilatas yang berkaitab dengan
-                            persetakan dan juga karyawan-karyawan yang berpengalaman untuk melayani anda semua
-                            Sebagai buktinya kami telah menyediakan foto dan keterangan di bawaha ini. Silahkan di cek</b></p>
+                            Perusahaan kami dilengkapi dengan berbagai macam fasilatas yang berkaitan dengan
+                            percetakan dan juga karyawan-karyawan yang berpengalaman untuk melayani anda semua.</b></p>                  
                 </div>
             </div>
         </div>
 
-
-        <div class="row">
-            <center><h3><b>Fasiltas Perusahaan</b></h3><br></center>
-            <div class="column">
-                <div class="container03">
-                    <img src="faslitascth.jpg" style="width: 100%">
-                    <div class="overlay">
-                        <div class="text">Lihat</div>
-                    </div>
-                </div>          
-            </div>
-            <div class="column">
-                <div class="container03">
-                    <img src="faslitascth.jpg" style="width: 100%">
-                    <div class="overlay">
-                        <div class="text">Lihat</div>
-                    </div>
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-globe logo slideanim"></span>
+                </div>
+                <div class="col-sm-8">
+                    <h2>Nilai Perusahaan</h2><br>
+                    <h4><strong>VISSION:</strong> Misi kami adalah menjadikan perusahaan sebagai tempat percetakan yang menanggapi keresahan semua pelanggan percetakan selama ini yang berkaitan dengan percetakan</h4><br>
+                    <p><strong>MISSION:</strong> Visi kami adalah kami hadir untuk membantu anda semua</p>
                 </div>
             </div>
-            <div class="column">
-                <div class="container03">
-                    <img src="faslitascth.jpg" style="width: 100%">
-                    <div class="overlay">
-                        <div class="text">Lihat</div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="container03">
-                    <img src="faslitascth.jpg" style="width: 100%">
-                    <div class="overlay">
-                        <div class="text">Lihat</div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="container03">
-                    <img src="faslitascth.jpg" style="width: 100%">
-                    <div class="overlay">
-                        <div class="text">Lihat</div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="container03">
-                    <img src="faslitascth.jpg" style="width: 100%">
-                    <div class="overlay">
-                        <div class="text">Lihat</div>
-                    </div>
-                </div>
-            </div>           
         </div>
 
+        <!-- Container (Services Section) -->
+        <div id="daftar" class="container-fluid text-center">
+            <h2>DAFTAR</h2>
+            <div class="col-sm-4 text-left">
 
-        <div class="row01">
-            <center><h3><b>Orang Penting</b></h3><br></center>
-            <div class="column01">
-                <div class="card">
-                    <img src="hans.JPG" alt="Hans" width="453" height="550">
-                    <div class="container02">
-                        <h2>Hans Nana</h2>
-                        <p class="title">WEB CREATOR</p>
-                        <p>Jika anda mengalami kesulitan silahkan hubungi saya</p>
-                        <p>oskarnana@gmail.com</p>
-                        <p><button class="button">Contact</button></p>
+                <form onsubmit="return make_json(this)" method="POST" class="container">                       
+                    <p><b>*Silahkan isi form ini untuk membuat akun.*</b></p>
+
+                    <label><b>Nama</b></label>
+                    <input type="text" placeholder="Masukkan Nama" id="Nama">
+
+                    <label><b>No. KTP</b></label>
+                    <input type="text" placeholder="Masukkan No. KTP" id="NoIdentitas">
+
+                    <label><b>Alamat</b></label>
+                    <input type="text" placeholder="Masukkan Alamat" id="Alamat"> 
+                    
+                    label><b>Deposit</b></label>
+                    <input type="text" placeholder="Masukkan Deposit" id="Deposit"> 
+
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Masukkan Pasword" id="Sandi">
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Ingat Password
+                    </label>
+
+                    <p>Creatro by PT. Percetakan Abadi <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn" onclick="make_json(form)">Daftar</button>
+                    </div>
+                </form>
+            </div>
+            <p id="output"></p>
+            <script>
+                function make_json(form) {
+                    var json = {
+                        "Nama": form.Nama.value,
+                        "NoIdentitas": form.NoIdentitas.value,
+                        "Alamat": form.Alamat.value,
+                        "Deposit":form.Deposit.value,
+                        "Sandi": form.Sandi.value
+
+                    };
+                    var html = JSON.stringify(json, 0, 100);
+
+                    var Url = "http://localhost:8084/Layanan_Cetak/webresources/Layanan";
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', Url, false);
+                    xhr.setRequestHeader("Content-type", "application/json");
+                    xhr.send(html);
+                    document.getElementById("output").innerHTML = html;
+                    return false;
+                }
+            </script> 
+
+        </div>
+
+        <!-- Container (Portfolio Section) -->
+        <div id="login" class="container-fluid text-center bg-grey">
+            <h2>Login</h2><br>
+            <div class="col-sm-4">
+                <form action="/action_page.php" class="container text-left"> 
+                    <p><b>*Silahkan login menggunakan akun anda.*</b></p>
+                    <label for="nama"><b>Nama</b></label>
+                    <input type="text" placeholder="Masukkan Nama" id="Nama" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Masukkan Password" id="Sandi" required>
+
+                    <button type="submit" class="btn"><b>Login</b></button>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Ingat Password
+                    </label>                                               
+                </form>
+            </div>     
+
+        </div>
+
+        <!-- Container (Pricing Section) -->
+        <div id="layanan" class="container-fluid text-center">
+            <h2>Layanan</h2><br>
+            <div class="col-sm-4 text-left">
+                <form  onsubmit="make_json(this)" method="POST" class="container">
+                    <p><b>*Silahkan ajukan perihal menegenai percetakan anda.*</b></p>                   
+
+                    <label><b>Waktu</b></label>
+                    <input type="time" id="Waktu">
+
+                    <label><b>Jumlah Cetakan</b></label>
+                    <input type="text" placeholder="Masukkan Jumlah Cetakan" id="JumlahCetakan" >
+
+                    <button type="submit" class="btn" value="submit"><b>Ajukan</b></button>                                              
+                </form>
+            </div>
+            <script>
+                function make_json(form) {
+                    var json = {
+                        "Waktu": form.Waktu.value,
+                        "JumlahCetakan": form.NoIdentitas.value
+                    };
+                    var html = JSON.stringify(json, 0, 100);
+
+                    var Url = "http://localhost:8084/Layanan_Cetak/webresources/Layanan";
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', Url, false);
+                    xhr.setRequestHeader("Content-type", "application/json");
+                    xhr.send(html);
+                    document.getElementById("output").innerHTML = html;
+                    return false;
+                }
+            </script> 
+        </div>
+        <div id="deposit" class="container-fluid text-center">
+            <h2>Deposit</h2><br>
+            <div class="col-sm-4 text-left">
+                <form action="/action_page.php" class="container">
+                    <p><b>*Silahkan melakukan deposit.*</b></p>
+
+                    <label for="depsit"><b>Deposit</b></label>
+                    <input type="text" placeholder="Rp." id="depsit" required>
+
+                    <button type="submit" class="btn"><b>Ajukan</b></button>
+                    <p>-------------------------------------------------</p>
+                    <p><b>N0. Rek : 161-00-0303836-6</b></p>
+                    <p><b>Jenis Bank : Mandiri</b></p>
+                    <p> <b>Nama : PT. Perusahaan Percetakan</b></p>
+                </form>
+            </div>   
+
+
+        </div>
+        <!-- Container (Contact Section) -->
+        <div id="contact" class="container-fluid bg-grey">
+            <h2 class="text-center">KONTAK</h2>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p><b>*Kontak kami jika anda mengalami kesulitan, kami akan merespon anda selama jam kerja.*</b></p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Paingan, Depok, Sleman Yogyakarta </p>
+                    <p><span class="glyphicon glyphicon-phone"></span> 082211428742</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span> ptpercetakanabadi@gmail.com</p>
+                </div>
+                <div class="col-sm-7 slideanim">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button class="btn btn-default pull-right" type="submit">Send</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="column01">
-                <div class="card">
-                    <img src="Asik.jpg" alt="Mika" width="453" height="550">
-                    <div class="container02">
-                        <h2>Mika Ross</h2>
-                        <p class="title">MANAGER</p>
-                        <p>Jika anda mengalami kesulitan silahkan hubungi saya</p>
-                        <p>mikaross@gmail.com</p>
-                        <p><button class="button">Contact</button></p>
-                    </div>
-                </div>
-            </div> 
-            <div class="column01">
-                <div class="card">
-                    <img src="Hans1.jpg" alt="Ivan Ruma" width="453" height="550">
-                    <div class="container02">
-                        <h2>Ivan Ruma</h2>
-                        <p class="title">WEB CREATOR</p>
-                        <p>Jika anda mengalami kesulitan silahkan hubungi saya</p>
-                        <p>ivanruma@gmail.com</p>
-                        <p><button class="button">Contact</button></p>
-                    </div>
-                </div>
-            </div>    
         </div>
 
+        <!-- Add Google Maps -->
+        <div id="googleMap" style="height:400px;width:100%;"></div>
+        <script>
+            function myMap() {
+                var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+                var mapProp = {center: myCenter, zoom: 12, scrollwheel: false, draggable: false, mapTypeId: google.maps.MapTypeId.ROADMAP};
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                var marker = new google.maps.Marker({position: myCenter});
+                marker.setMap(map);
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+        <!--
+        To use this code on your website, get a free API key from Google.
+        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+        -->
+
+        <footer class="container-fluid text-center">
+            <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <p>Web creatro by<a href="https://www.w3schools.com" title="Visit w3schools">www.PT.Percetakan Abadi</a></p>
+        </footer>
+
+        <script>
+            $(document).ready(function () {
+                // Add smooth scrolling to all links in navbar + footer link
+                $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 900, function () {
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+
+                $(window).scroll(function () {
+                    $(".slideanim").each(function () {
+                        var pos = $(this).offset().top;
+
+                        var winTop = $(window).scrollTop();
+                        if (pos < winTop + 600) {
+                            $(this).addClass("slide");
+                        }
+                    });
+                });
+            })
+        </script>
 
     </body>
 </html>
