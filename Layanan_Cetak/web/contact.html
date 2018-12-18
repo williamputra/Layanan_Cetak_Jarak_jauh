@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Indus Fact Industrial Category Flat Bootstrap Responsive Website Template | About :: W3layouts</title>
+        <title>PT.Percetakan Abadi</title>
 
         <!-- Meta tag Keywords -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +58,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="daftar.html">Daftar</a>
@@ -91,3 +91,24 @@
         <p><span class="glyphicon glyphicon-phone"></span> 082211428742</p>
         <p><span class="glyphicon glyphicon-envelope"></span> ptpercetakanabadi@gmail.com</p>
     </div>
+     <div id="map">
+            <script>
+
+                function initMap() {
+                    var jogja = {lat: -7.798472, lng: 110.369072};
+                    var sanatadharma = {lat: -7.753818, lng: 110.421894};
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: -7.798472, lng: 110.369072},
+                        zoom: 8
+                    });
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: -7.753818, lng: 110.421894},
+                        zoom: 8
+                    });
+                    var marker = new google.maps.Marker({position: jogja, map: map});
+                    var marker = new google.maps.Marker({position: sanatadharma, map: map});
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnD2l64I6G6fUkPpc3D79Jcau30v8xEKE&callback=initMap"
+            async defer></script>
+            </div>

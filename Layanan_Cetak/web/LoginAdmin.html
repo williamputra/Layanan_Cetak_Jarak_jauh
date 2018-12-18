@@ -112,20 +112,19 @@
                     <td</td>
                     <td></td>
                     <td><button type="button"  onclick="loadDoc()">Login</button></td>
-                </tr>               
-        </form> 
-         <script>
+                </tr> 
+                <script>
                 function loadDoc() {
                     var Nama = b.value;
                     var Sandi = a.value;
 
-                    var url = 'http://202.94.83.190:8080/Layanan_Cetak/webresources/user?Nama=' + Nama + '&Sandi=' + Sandi;
+                    var url = 'http://localhost:8084/Layanan_Cetak/webresources/user?Nama=' + Nama + '&Sandi=' + Sandi;
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             var user = JSON.parse(this.responseText);
                             if (user !== null) {
-                                window.open("layanan.html", "_self");
+                                window.open("Admindownload.html", "_self");
                             } else {
                                 alert("Login Gagal");
                             }
@@ -139,6 +138,8 @@
                 }
 
             </script>
+        </form> 
+         
 
     </center>
 </body>

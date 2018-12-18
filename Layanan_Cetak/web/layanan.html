@@ -25,18 +25,6 @@
         </script>
         <!--// Meta tag Keywords -->
 
-        <!-- banner slider css file -->
-        <link href="css/JiSlider.css" rel="stylesheet">
-        <!-- //banner slider css file -->
-
-        <!-- gallery-Swipe-box -->
-        <link rel="stylesheet" href="css/swipebox.css">
-        <!-- //gallery-Swipe-box -->
-
-        <!-- testimonials css -->
-        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" /><!-- flexslider css -->
-        <!-- //testimonials css -->
-
         <!-- css files -->
         <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
@@ -87,59 +75,104 @@
                 </ul>
             </div>
         </nav>
-        <section class="inner_page_banner text-center pt-4">
-            <h2 class="page_heading text-uppercase pt-md-5 pt-sm-4">LOGIN</h2>
-        </section>
-        <br>
-    <center>
-        <form action="/action_page.php" onsubmit="return make_json(this)" method="POST">
+        <!-- Nav bar -->
+    </div>
+    <!-- //Navigation -->
 
-            <table>
-                <tr>
-                    <td>Nama</td>
-                    <td>:</td>
-                    <td><input type="text" id="b" size="40"></td>
-                </tr> 
+    <!-- inner page banner -->
+    <section class="inner_page_banner text-center pt-4">
+        <h2 class="page_heading text-uppercase pt-md-5 pt-sm-4">LAYANAN</h2>
+    </section>
+    <!-- //inner page banner -->
+    <br>
+<center>
+    <form action="/action_page.php" onsubmit="return make_json(this)" method="POST">
 
-                <tr>
-                    <td>Sandi</td>
-                    <td>:</td>
-                    <td><input type="password" id="a" size="40"></td>
-                </tr> 
-                
-                <tr>
-                    <td></td>
-                    <td</td>
-                    <td></td>
-                    <td><button type="button"  onclick="loadDoc()">Login</button></td>
-                </tr>               
-        </form> 
-         <script>
-                function loadDoc() {
-                    var Nama = b.value;
-                    var Sandi = a.value;
+        <table>
+            <tr>
+                <td>Waktu</td>
+                <td>:</td>
+                <td><input type="date" name="waktu" size="40"></td>
+            </tr> 
 
-                    var url = 'http://202.94.83.190:8080/Layanan_Cetak/webresources/user?Nama=' + Nama + '&Sandi=' + Sandi;
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            var user = JSON.parse(this.responseText);
-                            if (user !== null) {
-                                window.open("layanan.html", "_self");
-                            } else {
-                                alert("Login Gagal");
-                            }
+            <tr>
+                <td>Jumlah Cetakan</td>
+                <td>:</td>
+                <td><input type="text" name="jumlahCetakan" size="11"></td>
+            </tr> 
 
-                            document.getElementById("demo").innerHTML =
-                                    this.responseText;
-                        }
-                    };
-                    xhttp.open("GET", url, true);
-                    xhttp.send();
+            <tr>
+                <td>File Cetakan</td>
+                <td>:</td>
+                <td><input type="file" name="fileCetakan" size="40"></td>
+            </tr> 
+
+            <tr>
+                <td></td>
+                <td</td>
+                <td></td>
+                <td><input type="submit" value="Upload" size="30"></td>
+            </tr>           
+    </form> 
+</center>
+
+<pre id="output">
+</pre>
+<script>
+    function make_json(form) {
+        var json = {
+            "waktu": form.waktu.value,
+            "jumlahCetakan": form.jumlahCetakan.value,
+            "fileCetakan": form.fileCetakan.value
+        };
+        var html = JSON.stringify(json, 0, 100);
+        var Url = "http://202.94.83.190:8080/Layanan_Cetak/webresources/filedata/addFileData";
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", Url, false);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(html);
+        document.getElementById("output").innerHTML = html;
+        return false;
+    }
+</script>
+<script>
+            window.export.onclick = function () {
+
+                if (!window.Blob) {
+                    alert('Your legacy browser does not support this action.');
+                    return;
                 }
 
-            </script>
+                var html, link, blob, url, css;
 
-    </center>
+                // EU A4 use: size: 841.95pt 595.35pt;
+                // US Letter use: size:11.0in 8.5in;
+
+                css = (
+                        '<style>' +
+                        '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: landscape;}' +
+                        'div.WordSection1 {page: WordSection1;}' +
+                        'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
+                        '</style>'
+                        );
+
+                html = window.id01.innerHTML;
+                blob = new Blob(['\ufeff', css + html], {
+                    type: 'application/msword'
+                });
+                url = URL.createObjectURL(blob);
+                link = document.createElement('A');
+                link.href = url;
+                // Set default file name. 
+                // Word will append file extension - do not add an extension here.
+                link.download = 'Document';
+                document.body.appendChild(link);
+                if (navigator.msSaveOrOpenBlob)
+                    navigator.msSaveOrOpenBlob(blob, 'fileCetakan.getPrototypeOf(Document.dov)'); // IE10-11
+                else
+                    link.click();  // other browsers
+                document.body.removeChild(link);
+            };
+        </script>
 </body>
 </html>
